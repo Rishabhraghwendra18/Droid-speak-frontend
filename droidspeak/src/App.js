@@ -1,9 +1,9 @@
-import LoginSingnUp from './components/LoginSignUp';
+import LoginSignUp from './components/LoginSignUp';
 import './styles/App.css';
 function App() {
   return (
     <div className="App">
-      <LoginSingnUp/>
+      <LoginSignUp/>
     </div>
   );
 }
