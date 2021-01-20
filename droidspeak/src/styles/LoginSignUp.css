@@ -14,6 +14,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 2rem;
+  border-radius: 20px !important;
 }
 
 .card .card-body {
@@ -30,5 +32,49 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.card .card-title {
+  font-size: 4rem;
+}
+
+.card .card-subtitile {
+  font-size: 3rem;
+}
+
+.card .card-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.fa-user, .fa-lock {
+  position: relative;
+  left: 38px;
+}
+
+input {
+  padding: 8px;
+  border-radius: 50px;
+  text-align: center;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  padding: 8px;
+  border-radius: 50px;
 }
 /*# sourceMappingURL=LoginSignUp.css.map */

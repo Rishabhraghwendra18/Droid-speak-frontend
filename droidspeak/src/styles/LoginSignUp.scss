@@ -1,3 +1,5 @@
+$font_size:2rem;
+$font_size_title:4rem;
 .card{
       margin: 0;
       width: 37%;
@@ -5,10 +7,40 @@
       flex-direction: row;
       justify-content: center;
       align-items: center;
+      font-size: $font_size;
+      border-radius: 20px !important;
       .card-body{
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
       }
+      .card-title{
+            font-size: $font_size_title;
+      }
+      .card-subtitile{
+            font-size: 3rem;
+      }
+      .card-text{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+      }
+}
+.fa-user , .fa-lock{
+      position: relative;
+      left: 38px;
+}
+input{
+      padding: 8px;
+      border-radius: 50px;
+      text-align: center;
+}
+input:focus{
+      outline: none;
+}
+button{
+      padding: 8px;
+      border-radius: 50px;
 }
