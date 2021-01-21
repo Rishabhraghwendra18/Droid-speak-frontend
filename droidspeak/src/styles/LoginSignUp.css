@@ -16,6 +16,8 @@
           align-items: center;
   font-size: 1rem;
   border-radius: 20px !important;
+  -webkit-box-shadow: 0 5px 8px #414141;
+          box-shadow: 0 5px 8px #414141;
 }
 
 .card .card-body {
@@ -77,6 +79,11 @@ input:focus {
   padding: 8px;
   border-radius: 50px;
   width: 57%;
+  background: none;
+}
+
+.my_button:focus {
+  outline: none;
 }
 
 .circle {

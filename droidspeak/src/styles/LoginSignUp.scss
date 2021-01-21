@@ -10,6 +10,7 @@ $border_radius:50px;
       align-items: center;
       font-size: $font_size;
       border-radius: 20px !important;
+      box-shadow: 0 5px 8px #414141;
       .card-body{
             display: flex;
             flex-direction: column;
@@ -45,6 +46,10 @@ input:focus{
       padding: 8px;
       border-radius: $border_radius;
       width: 57%;
+      background: none;
+}
+.my_button:focus{
+      outline: none;
 }
 .circle{
       height: 100px; 
