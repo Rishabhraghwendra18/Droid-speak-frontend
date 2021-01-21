@@ -1,5 +1,6 @@
-$font_size:2rem;
+$font_size:1rem;
 $font_size_title:4rem;
+$border_radius:50px;
 .card{
       margin: 0;
       width: 37%;
@@ -30,17 +31,24 @@ $font_size_title:4rem;
 }
 .fa-user , .fa-lock{
       position: relative;
-      left: 38px;
+      left: 22px;
 }
 input{
       padding: 8px;
-      border-radius: 50px;
+      border-radius: $border_radius;
       text-align: center;
 }
 input:focus{
       outline: none;
 }
-button{
+.my_button{
       padding: 8px;
-      border-radius: 50px;
+      border-radius: $border_radius;
+      width: 57%;
+}
+.circle{
+      height: 100px; 
+      width: 100%; 
+      border-radius: 0 0 150px 150px; 
+      background-color: green; 
 }

@@ -10,13 +10,14 @@ function LoginSignUp() {
                         <Card.Text>
                               <label>
                                     <i class="fa fa-user" aria-hidden="true"></i>
-                                    <input type="email" className="my-2" placeholder="Enter your email id"/>
+                                    <input type="email" className="mt-2" placeholder="Enter your email id"/>
                               </label>
                               <label>
                                     <i class="fa fa-lock" aria-hidden="true"></i>
                                     <input type="password" className="my-2" placeholder="Enter your password"/>
                               </label>
-                              <button type="button" >LOGIN</button>
+                              <button type="button" className="my_button mb-2">LOGIN</button>
+                              <span>Don't have a account? <a href="#"> Create an Account</a></span>
                               <div className="circle"></div>
                         </Card.Text>
                   </Card.Body>

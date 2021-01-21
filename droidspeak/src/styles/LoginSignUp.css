@@ -14,7 +14,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 2rem;
+  font-size: 1rem;
   border-radius: 20px !important;
 }
 
@@ -60,7 +60,7 @@
 
 .fa-user, .fa-lock {
   position: relative;
-  left: 38px;
+  left: 22px;
 }
 
 input {
@@ -73,8 +73,16 @@ input:focus {
   outline: none;
 }
 
-button {
+.my_button {
   padding: 8px;
   border-radius: 50px;
+  width: 57%;
+}
+
+.circle {
+  height: 100px;
+  width: 100%;
+  border-radius: 0 0 150px 150px;
+  background-color: green;
 }
 /*# sourceMappingURL=LoginSignUp.css.map */
