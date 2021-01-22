@@ -13,18 +13,20 @@ export default function ScheduleModal({show,handleClose}) {
               <Modal.Title>Schedule Meeting</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                      <label>
-                            <span>Meeting Name:</span>
-                            <input type="text" className="my-2"/>
-                      </label>
-                      <label>
-                            <span>Date/Time:</span>
-                            <input type="datetime-local" className="mt-2"/>
-                      </label>
-                      <label>
-                            <span>End Time:</span>
-                            <input type="time" className="mt-2"/>
-                      </label>
+                      <table>
+                            <tr>
+                                  <td>Meeting Name:</td>
+                                  <td><input type="text" className="my-2"/></td>
+                            </tr>
+                            <tr>
+                                  <td>Start Date/Time:</td>
+                                  <td><input type="datetime-local"/></td>
+                            </tr>
+                            <tr>
+                                  <td>End Time:</td>
+                                  <td><input type="time" className="my-2"/></td>
+                            </tr>
+                      </table>
             </Modal.Body>
             <Modal.Footer>
               <Button variant="secondary" onClick={handleClose}>
