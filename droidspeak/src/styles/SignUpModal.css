@@ -1,0 +1,12 @@
+span {
+  margin-right: 10px;
+}
+
+label:nth-child(2) span {
+  margin-right: 57px;
+}
+
+label:nth-child(1) span {
+  margin-right: 40px;
+}
+/*# sourceMappingURL=SignUpModal.css.map */

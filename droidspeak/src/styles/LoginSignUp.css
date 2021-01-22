@@ -85,11 +85,4 @@ input:focus {
 .my_button:focus {
   outline: none;
 }
-
-.circle {
-  height: 100px;
-  width: 100%;
-  border-radius: 0 0 150px 150px;
-  background-color: green;
-}
 /*# sourceMappingURL=LoginSignUp.css.map */

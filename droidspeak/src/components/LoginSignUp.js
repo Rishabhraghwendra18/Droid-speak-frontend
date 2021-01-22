@@ -1,7 +1,11 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {Card} from 'react-bootstrap';
 import '../styles/LoginSignUp.css';
+import SignUpModal from './SignUpModal';
 function LoginSignUp() {
+const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
       return (
             <Card>
                   <Card.Body>
@@ -17,8 +21,8 @@ function LoginSignUp() {
                                     <input type="password" className="my-2" placeholder="Enter your password"/>
                               </label>
                               <button type="button" className="my_button mb-2">LOGIN</button>
-                              <span>Don't have a account? <a href="#"> Create an Account</a></span>
-                              <div className="circle"></div>
+                              <span>Don't have a account?<a href="#" onClick={()=>{handleShow()}}> Create an Account</a></span>
+                              {show?<SignUpModal show={show} handleClose={handleClose}/>:null}
                         </Card.Text>
                   </Card.Body>
             </Card>
