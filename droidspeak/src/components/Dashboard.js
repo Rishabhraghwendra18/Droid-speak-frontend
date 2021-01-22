@@ -12,7 +12,7 @@ const handleShow = () => setShow(true);
                   <Navbar bg="light" variant="light">
                   <Navbar.Brand href="#home">Navbar</Navbar.Brand>
                   <Nav className="mr-auto">
-                        <Nav.Link href="#" onClick={handleShow}>Schedule A Metting</Nav.Link>
+                        <Nav.Link href="#" onClick={handleShow}>Schedule a Metting</Nav.Link>
                   </Nav>
                   <Form inline>
                         <FormControl type="text" placeholder="Search" className="mr-sm-2" />
@@ -20,6 +20,10 @@ const handleShow = () => setShow(true);
                   </Form>
                   </Navbar>
                   <ScheduleModal show={show} handleClose={handleClose}/>
+                  <Button variant="primary" onClick={handleShow} style={{margin:"18px"}}>
+                        <i class="fa fa-plus" aria-hidden="true" style={{marginRight:"5px"}}></i>
+                         Schedule a Meeting 
+                  </Button>
             </div>
       )
 }
