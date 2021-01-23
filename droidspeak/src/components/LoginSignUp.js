@@ -12,7 +12,7 @@ const [show, setShow] = useState(false);
   const SignIn=function(event){
       event.preventDefault();
       auth.signInWithEmailAndPassword(email,password)
-      .then((user)=>console.log(user))    //remove console.log
+      .then((user)=>{console.log(user)})    //remove console.log
       .catch((err)=>alert(err.message))
   }
       return (
