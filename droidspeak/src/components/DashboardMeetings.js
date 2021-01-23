@@ -1,10 +1,17 @@
 import React from 'react'
 import { Card, Button } from 'react-bootstrap';
-export default function DashboardMeetings({ name, starttime, endtime, date, platform }) {
+import{db,auth}from '../utilites/firebase';
+export default function DashboardMeetings({ id,name, starttime, endtime, date, platform }) {
       const CardStyle = {
             width: "36rem",
             "margin-bottom": "23px"
       };
+      const DeleteSchedule=function(event){
+            event.preventDefault();
+            db.collection("users").doc(auth.currentUser.uid).collection("schedules").doc(id)
+            .delete().then(()=>alert("Successfully deleted"))
+            .catch(e=>alert("Can't delete : ",e.message))
+      }
       return (
             <Card border="info" className="" style={CardStyle}>
                   <Card.Header style={{ width: '100%' }}>{name}</Card.Header>
@@ -37,7 +44,7 @@ export default function DashboardMeetings({ name, starttime, endtime, date, plat
                                     </tr>
                               </table>
                         </Card.Text>
-                        <Button variant="danger">Delete Schedule</Button>
+                        <Button variant="danger" onClick={DeleteSchedule}>Delete Schedule</Button>
                   </Card.Body>
             </Card>
       )

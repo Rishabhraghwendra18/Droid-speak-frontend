@@ -33,7 +33,7 @@ export default function Dashboard() {
             , [])
       return (
             <div className="Dashboard">
-                  <Navbar bg="light" variant="light">
+                  <Navbar sticky="top"bg="light" variant="light">
                         <Navbar.Brand href="#home">Navbar</Navbar.Brand>
                         <Nav className="mr-auto">
                               <Nav.Link href="#" onClick={handleShow}>Schedule a Metting</Nav.Link>
@@ -52,7 +52,7 @@ export default function Dashboard() {
                   <hr />
                   <div className="meetings_list">
                         {
-                              meetinglists ? meetinglists.map((e) => <DashboardMeetings key={e.id} name={e.data()["Meeting Name"]} starttime={e.data()["Start Time"]} endtime={e.data()["End Time"]} date={e.data()["Date"]} platform={e.data().Platform} />
+                              meetinglists ? meetinglists.map((e) => <DashboardMeetings key={e.id} id={e.id} name={e.data()["Meeting Name"]} starttime={e.data()["Start Time"]} endtime={e.data()["End Time"]} date={e.data()["Date"]} platform={e.data().Platform} />
                               ) : null
                         }
                   </div>
