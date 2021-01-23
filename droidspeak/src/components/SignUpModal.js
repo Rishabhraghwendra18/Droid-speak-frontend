@@ -8,7 +8,7 @@ export default function SignUpModal({show,handleClose}) {
   const SignUp=function(event){
     event.preventDefault();
     auth.createUserWithEmailAndPassword(email,passowrd)
-    .then((e)=>{alert("Account Created Successfully");
+    .then((e)=>{alert("Account Created Successfully.Please login from main page");
     console.log(e.user.uid)})
     .catch((err)=>alert(err.message))
   }
