@@ -1,6 +1,6 @@
 import {Modal,Button} from 'react-bootstrap';
 import React,{useState} from 'react';
-import {db}from '../utilites/firebase';
+import {auth,db}from '../utilites/firebase';
 
 export default function ScheduleModal({show,handleClose}) {
       const[stime,setSTime]=useState();
@@ -13,6 +13,23 @@ export default function ScheduleModal({show,handleClose}) {
             "padding": "3px",
             "background-color": "white"
       }
+      const schedule=function(event){
+            event.preventDefault();
+            let userid=null,doc_fetched=null;
+            userid = auth.currentUser.uid;
+            doc_fetched = db.collection("users").doc(userid);
+            if (doc_fetched) {
+                  doc_fetched.collection("schedules").add({
+                        "Date":date,
+                        "End Time":etime,
+                        "Meeting Name":meetingname,
+                        "Platform":platform,
+                        "Start Time":stime
+                  })
+                  .then((e)=>alert("Meeting Schedules"))
+                  .catch((e)=>alert(e.message))    
+            }
+      };
       return (
             <Modal
             show={show}
@@ -56,7 +73,7 @@ export default function ScheduleModal({show,handleClose}) {
               <Button variant="secondary" onClick={handleClose}>
                 Close
               </Button>
-              <Button variant="success">Schedule</Button>
+              <Button variant="success" onClick={schedule}>Schedule</Button>
             </Modal.Footer>
           </Modal>
       )
