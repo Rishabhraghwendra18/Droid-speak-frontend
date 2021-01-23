@@ -1,6 +1,8 @@
 import {Modal,Button} from 'react-bootstrap';
 import React,{useState} from 'react';
 import {auth,db}from '../utilites/firebase';
+import firebase from 'firebase/app';
+import 'firebase/firestore';
 
 export default function ScheduleModal({show,handleClose}) {
       const[stime,setSTime]=useState();
@@ -24,9 +26,10 @@ export default function ScheduleModal({show,handleClose}) {
                         "End Time":etime,
                         "Meeting Name":meetingname,
                         "Platform":platform,
-                        "Start Time":stime
+                        "Start Time":stime,
+                        "timestamp":firebase.firestore.FieldValue.serverTimestamp()
                   })
-                  .then((e)=>alert("Meeting Schedules"))
+                  .then((e)=>alert("Meeting Scheduled"))
                   .catch((e)=>alert(e.message))    
             }
       };

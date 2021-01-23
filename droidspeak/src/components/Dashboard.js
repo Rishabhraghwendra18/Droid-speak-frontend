@@ -23,9 +23,14 @@ export default function Dashboard() {
                         }
                   }).catch((err) => alert(err.message))
             }
-            doc_fetched.collection("schedules").onSnapshot((schedule)=>{
-                  setMeetinglists(schedule.docs)})
-      }, [])
+            doc_fetched.collection("schedules").orderBy('timestamp','desc').onSnapshot((schedule) => {
+                  setMeetinglists(schedule.docs);
+                  // if(meetinglists) 
+                  //       meetinglists.map(e=>console.log("if",e.id))
+
+            })
+      }
+            , [])
       return (
             <div className="Dashboard">
                   <Navbar bg="light" variant="light">
@@ -47,8 +52,8 @@ export default function Dashboard() {
                   <hr />
                   <div className="meetings_list">
                         {
-                              meetinglists?meetinglists.map((e)=><DashboardMeetings name={e.data()["Meeting Name"]} starttime={e.data()["Start Time"]} endtime={e.data()["End Time"]} date={e.data()["Date"]} platform={e.data().Platform}/>
-                              ):null
+                              meetinglists ? meetinglists.map((e) => <DashboardMeetings key={e.id} name={e.data()["Meeting Name"]} starttime={e.data()["Start Time"]} endtime={e.data()["End Time"]} date={e.data()["Date"]} platform={e.data().Platform} />
+                              ) : null
                         }
                   </div>
             </div>
