@@ -23,11 +23,8 @@ export default function Dashboard() {
                         }
                   }).catch((err) => alert(err.message))
             }
-            doc_fetched.collection("schedules").get().then((schedule)=>{
-                  setMeetinglists(schedule.docs);
-                  if(meetinglists) meetinglists.map(e=>console.log(e.data()))
-            })
-            .catch((e)=>console.log("Error in subcollection" , e.message))
+            doc_fetched.collection("schedules").onSnapshot((schedule)=>{
+                  setMeetinglists(schedule.docs)})
       }, [])
       return (
             <div className="Dashboard">
@@ -50,7 +47,7 @@ export default function Dashboard() {
                   <hr />
                   <div className="meetings_list">
                         {
-                              meetinglists?meetinglists.map((e)=><DashboardMeetings name={e.data()["Meeting Name"]} starttime={e.data()["Start Time"].seconds.toString()} endtime={e.data()["End Time"].seconds.toString()} date={e.data()["Start Time"].seconds.toString()} platform={e.data().Platform}/>
+                              meetinglists?meetinglists.map((e)=><DashboardMeetings name={e.data()["Meeting Name"]} starttime={e.data()["Start Time"]} endtime={e.data()["End Time"]} date={e.data()["Date"]} platform={e.data().Platform}/>
                               ):null
                         }
                   </div>
