@@ -1,7 +1,12 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Card, Button } from 'react-bootstrap';
 import{db,auth}from '../utilites/firebase';
-export default function DashboardMeetings({ id,name, starttime, endtime, date, platform }) {
+import UpdateModal from './UpdateModal';
+export default function DashboardMeetings({ id,name, starttime, endtime, date, platform,timestamp }) {
+const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
       const CardStyle = {
             width: "36rem",
             "margin-bottom": "23px"
@@ -44,7 +49,16 @@ export default function DashboardMeetings({ id,name, starttime, endtime, date, p
                                     </tr>
                               </table>
                         </Card.Text>
-                        <Button variant="danger" onClick={DeleteSchedule}>Delete Schedule</Button>
+                        <div className="d-flex flex-row">
+                              <Button variant="danger" className="mx-2" onClick={DeleteSchedule}>Delete Schedule</Button>
+                              <Button variant="primary" className="mx-2" onClick={handleShow}>Update Schedule</Button>
+                              <UpdateModal show={show} handleClose={handleClose} id={id} name={name} mplatform={platform}
+                              starttime={starttime}
+                              endtime={endtime}
+                              mdate={date}
+                              timestamp={timestamp}
+                              />
+                        </div>
                   </Card.Body>
             </Card>
       )
