@@ -11,18 +11,24 @@ export default function Dashboard() {
       const [doclist, setDoclist] = useState(null);
       const [username, setUsername] = useState();
       const [meetinglists, setMeetinglists] = useState();
-      let userid = null, doc_fetched = null, name;
+      let userid = null, doc_fetched = null;
       useEffect(() => {
             userid = auth.currentUser.uid;
             doc_fetched = db.collection("users").doc(userid);
+            console.log("users are",userid)
+            console.log("if block se phale")
             if (doc_fetched) {
                   doc_fetched.get().then((doc) => {
+                        console.log("doc me ",doc.data())
                         if (doc.exists) {
                               console.log("Doc is", doc.data());
+                              setUsername(doc.data()["Name"]);
                               setDoclist(doc.data());
+                              console.log("Name is",doc.data()["Name"])
                         }
                   }).catch((err) => alert(err.message))
             }
+            console.log("if block ke bad")
             doc_fetched.collection("schedules").orderBy('timestamp','desc').onSnapshot((schedule) => {
                   setMeetinglists(schedule.docs);
                   // if(meetinglists) 
@@ -39,7 +45,7 @@ export default function Dashboard() {
                               <Nav.Link href="#" onClick={handleShow}>Schedule a Metting</Nav.Link>
                         </Nav>
                         <Form inline>
-                              {name ? <span>Welcome : {name}</span> : <span>User</span>}
+                              {username ? <span>Welcome : {username}</span> : <span>User</span>}
                               {/* <FormControl type="text" placeholder="Search" className="mr-sm-2" /> */}
                               <Button variant="danger" onClick={() => auth.signOut()}>Log Out</Button>
                         </Form>

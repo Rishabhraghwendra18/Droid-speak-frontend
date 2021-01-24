@@ -11,8 +11,7 @@ const [show, setShow] = useState(false);
   const [password,setPassword]=useState('');
   const SignIn=function(event){
       event.preventDefault();
-      auth.signInWithEmailAndPassword(email,password)
-      .then((user)=>{console.log(user)})    //remove console.log
+      auth.signInWithEmailAndPassword(email,password)  
       .catch((err)=>alert(err.message))
   }
       return (
