@@ -9,7 +9,6 @@ function App() {
   auth.onAuthStateChanged((authUser)=>{
     if(authUser){
       setUser(true);
-      // console.log(authUser)
     }
     else{
       setUser(false);

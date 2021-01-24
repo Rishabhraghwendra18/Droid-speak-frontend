@@ -8,7 +8,6 @@ export default function Dashboard() {
       const [show, setShow] = useState(false);
       const handleClose = () => setShow(false);
       const handleShow = () => setShow(true);
-      const [doclist, setDoclist] = useState(null);
       const [username, setUsername] = useState();
       const [meetinglists, setMeetinglists] = useState();
       let userid = null, doc_fetched = null;
@@ -19,15 +18,11 @@ export default function Dashboard() {
                   doc_fetched.onSnapshot((doc) => {
                         if (doc.exists) {
                               setUsername(doc.data()["Name"]);
-                              setDoclist(doc.data());
                         }
                         })
             }
             doc_fetched.collection("schedules").orderBy('timestamp','desc').onSnapshot((schedule) => {
                   setMeetinglists(schedule.docs);
-                  // if(meetinglists) 
-                  //       meetinglists.map(e=>console.log("if",e.id))
-
             })
       }
             , [])
@@ -40,7 +35,6 @@ export default function Dashboard() {
                         </Nav>
                         <Form inline>
                               {username ? <span>Welcome : {username}</span> : <span>User</span>}
-                              {/* <FormControl type="text" placeholder="Search" className="mr-sm-2" /> */}
                               <Button variant="danger" onClick={() => auth.signOut()}>Log Out</Button>
                         </Form>
                   </Navbar>
