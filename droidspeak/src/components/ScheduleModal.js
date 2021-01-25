@@ -15,8 +15,6 @@ export default function ScheduleModal({ show, handleClose }) {
             "padding": "3px",
             "background-color": "white"
       }
-      const [smeet, setMeet] = useState({});
-      const[szoom,setZoom]=useState({});
       function GoogleMeet() {
             return (
                   <>
@@ -46,7 +44,7 @@ export default function ScheduleModal({ show, handleClose }) {
                         <span className="text-center d-block w-100">Or</span>
                         <tr>
                               <td>Link :</td>
-                              <td><input type="text" id="zoomlink"className="my-2" onChange={e => setMeet({link :e.target.value})} /></td>
+                              <td><input type="text" id="zoomlink"className="my-2" /></td>
                         </tr>
                   </>
             )

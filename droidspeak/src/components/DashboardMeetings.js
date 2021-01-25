@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import { Card, Button } from 'react-bootstrap';
 import{db,auth}from '../utilites/firebase';
 import UpdateModal from './UpdateModal';
-export default function DashboardMeetings({ id,name, starttime, endtime, date, platform,timestamp }) {
+export default function DashboardMeetings({ id,name, starttime, endtime, date, platform,timestamp,details }) {
 const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -57,6 +57,7 @@ const [show, setShow] = useState(false);
                               endtime={endtime}
                               mdate={date}
                               timestamp={timestamp}
+                              details={details}
                               />
                         </div>
                   </Card.Body>

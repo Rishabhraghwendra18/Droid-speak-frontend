@@ -46,7 +46,7 @@ export default function Dashboard() {
                   <hr />
                   <div className="meetings_list">
                         {
-                              meetinglists ? meetinglists.map((e) => <DashboardMeetings key={e.id} id={e.id} name={e.data()["Meeting Name"]} starttime={e.data()["Start Time"]} endtime={e.data()["End Time"]} date={e.data()["Date"]} platform={e.data().Platform} timestamp={e.data()["timestamp"]}/>
+                              meetinglists ? meetinglists.map((e) => <DashboardMeetings key={e.id} id={e.id} name={e.data()["Meeting Name"]} starttime={e.data()["Start Time"]} endtime={e.data()["End Time"]} date={e.data()["Date"]} platform={e.data().Platform} timestamp={e.data()["timestamp"]} details={e.data().details}/>
                               ) : null
                         }
                   </div>
